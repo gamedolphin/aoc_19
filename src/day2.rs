@@ -53,8 +53,8 @@ pub fn run() {
 
     let comp_val = 19_690_720;
 
-    for i in 1..100 {
-        for j in 1..100 {
+    for i in 1..99 {
+        for j in 1..99 {
             let result = run_program(vals.clone(), i, j);
             if result == comp_val {
                 let answer = (100*i)+j;
