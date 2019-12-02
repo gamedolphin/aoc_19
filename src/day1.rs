@@ -1,13 +1,15 @@
 use std::fs::File;
 use std::io::{BufRead, BufReader};
 
+
 fn calculate_rec(mass: i32) -> i32 {
     let sum = (mass / 3) - 2;
     if sum <= 0 { 0 } else { sum + calculate_rec(sum) }
 }
 
 pub fn run() {
-    let filename = "./day1.txt";
+    crate::day_info::print_info(1,1);
+    let filename = "./info/day1/puzzle_input.txt";
     let mut sum = 0;
     let mut total_sum = 0;
     let reader = BufReader::new(File::open(filename).expect("Could not find file day1.txt"));
@@ -20,6 +22,9 @@ pub fn run() {
         }
     }
 
-    println!("Day 1, part 1: {}", sum);
-    println!("Day 1, part 2: {}", total_sum);
+    println!("Your puzzle answer was {}.", sum);
+
+    crate::day_info::print_info(1,2);
+
+    println!("Your puzzle answer was {}.", total_sum);
 }
