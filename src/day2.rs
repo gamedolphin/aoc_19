@@ -35,7 +35,6 @@ fn run_program(mut vals: Vec<i64>, noun: i64, verb: i64) -> i64 {
 }
 
 pub fn run() {
-    crate::day_info::print_info(2,1);
 
     let filename = "./info/day2/puzzle_input.txt";
     let contents = fs::read_to_string(filename)
@@ -47,8 +46,9 @@ pub fn run() {
     }).collect();
 
     let part1 = run_program(vals.clone(), 12, 2);
-    println!("Your puzzle answer was {}.", part1);
 
+    crate::day_info::print_info(2,1);
+    crate::day_info::print_answer(format!("{}", part1));
     crate::day_info::print_info(2,2);
 
     let comp_val = 19_690_720;
@@ -58,7 +58,7 @@ pub fn run() {
             let result = run_program(vals.clone(), i, j);
             if result == comp_val {
                 let answer = (100*i)+j;
-                println!("Your puzzle answer was {}.", answer);
+                crate::day_info::print_answer(format!("{}", answer));
                 break;
             }
         }

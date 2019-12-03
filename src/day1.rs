@@ -8,7 +8,6 @@ fn calculate_rec(mass: i32) -> i32 {
 }
 
 pub fn run() {
-    crate::day_info::print_info(1,1);
     let filename = "./info/day1/puzzle_input.txt";
     let mut sum = 0;
     let mut total_sum = 0;
@@ -22,9 +21,8 @@ pub fn run() {
         }
     }
 
-    println!("Your puzzle answer was {}.", sum);
-
+    crate::day_info::print_info(1,1);
+    crate::day_info::print_answer(format!("{}",sum));
     crate::day_info::print_info(1,2);
-
-    println!("Your puzzle answer was {}.", total_sum);
+    crate::day_info::print_answer(format!("{}",total_sum));
 }
